@@ -97,17 +97,12 @@ export default class CRM {
   }
 
   createCRUDModalInputs() {
-    const titleInput = new Input(
-      'title',
-      'Краткое описание',
-      'text',
-      titleValidate
-    );
+    const titleInput = new Input('title', 'Название', 'text', titleValidate);
     this.crudModal.addInput('title', titleInput);
 
     const descriptionInput = new Input(
       'description',
-      'Подробное описание',
+      'Описание',
       'textarea',
       titleValidate
     );
@@ -135,7 +130,7 @@ export default class CRM {
 
       if (controlType === CONTROL_TYPES.create) {
         this.blockingCRM();
-        this.crudModal.open('Добавить тикет', CONTROL_TYPES.create);
+        this.crudModal.open('Добавление тикета', CONTROL_TYPES.create);
         return;
       }
 
@@ -149,7 +144,7 @@ export default class CRM {
         this.crudModal.setInput('description', item.description);
 
         this.crudModal.open(
-          'Вы уверены, что хотите удалить тикет? Это действие необратимо.',
+          'Вы действительно хотите удалить?',
           CONTROL_TYPES.delete
         );
       }
