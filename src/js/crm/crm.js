@@ -97,7 +97,12 @@ export default class CRM {
   }
 
   createCRUDModalInputs() {
-    const titleInput = new Input('title', 'Краткое описание', 'text', titleValidate);
+    const titleInput = new Input(
+      'title',
+      'Краткое описание',
+      'text',
+      titleValidate
+    );
     this.crudModal.addInput('title', titleInput);
 
     const descriptionInput = new Input(
